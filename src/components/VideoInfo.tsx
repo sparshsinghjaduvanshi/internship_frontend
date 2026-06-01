@@ -103,13 +103,13 @@ const VideoInfo = ({ video }: any) => {
         }
       );
       if (res.data.success) {
-        const link = document.createElement("a");
-        link.href = video.videoUrl;
-        link.download =
-          `${video.videotitle}.mp4`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        const downloadUrl = video.videoUrl.replace(
+          "/upload/",
+          "/upload/fl_attachment/"
+        );
+
+        window.open(downloadUrl, "_blank");
+
         alert("Download started");
       }
     } catch (error: any) {
