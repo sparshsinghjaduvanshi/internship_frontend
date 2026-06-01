@@ -104,8 +104,7 @@ const VideoInfo = ({ video }: any) => {
       );
       if (res.data.success) {
         const link = document.createElement("a");
-        link.href =
-          `${process.env.NEXT_PUBLIC_BACKEND_URL}/${video.videoUrl}`;
+        link.href = video.videoUrl;
         link.download =
           `${video.videotitle}.mp4`;
         document.body.appendChild(link);
