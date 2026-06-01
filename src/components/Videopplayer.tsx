@@ -15,7 +15,7 @@ interface VideoPlayerProps {
   video: {
     _id: string;
     videotitle: string;
-    filepath: string;
+    videoUrl: string;
   };
   onNextVideo: () => void;
 }
@@ -258,7 +258,7 @@ export default function VideoPlayer({ video, onNextVideo }: VideoPlayerProps) {
         }
       >
         <source
-          src={`${process.env.NEXT_PUBLIC_BACKEND_URL}/${video?.filepath}`}
+          src={video.videoUrl}
           type="video/mp4"
         />
         Your browser does not support the video tag.
