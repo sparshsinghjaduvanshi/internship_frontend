@@ -513,7 +513,31 @@ export default function CallPage() {
 
         {/* Top Room Label */}
         <div className="absolute top-4 left-4 bg-black/60 px-4 py-2 rounded-xl text-white backdrop-blur-sm">
-            Room: {roomId}
+            <div className="font-semibold">
+                Room ID
+            </div>
+
+            <div className="text-sm break-all">
+                {roomId}
+            </div>
+
+            <button
+                className="
+      mt-2
+      bg-blue-600
+      px-3
+      py-1
+      rounded
+      text-sm
+    "
+                onClick={() =>
+                    navigator.clipboard.writeText(
+                        roomId as string
+                    )
+                }
+            >
+                Copy Room ID
+            </button>
         </div>
 
         {/* Bottom Controls */}
